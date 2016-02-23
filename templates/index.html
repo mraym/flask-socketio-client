@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+  <script src="//cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script>
+    $(function() {
+      // enter the correct ip and port below
+      var socket = io("//111.111.111.111:8443");
+      socket.on('new workitem', function(data) {
+        $("#newWorkItems").append("<li>" + JSON.stringify(data) + "</li>");
+      });
+    });
+  </script>
+
+  hello flask socket.io client!
+  <ul id="newWorkItems">
+
+  </ul>
+</body>
+</html>
